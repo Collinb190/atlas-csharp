@@ -10,11 +10,11 @@ namespace _5_print_comb
             {
                 for (int k = 1; k < 10; k++)
                 {
-                    if (i < k && i != 8 && k != 9)
+                    if (i < k && !(i == 8 && k == 9))
                     {
                         Console.Write($"{i}{k}, ");
                     }
-                    else if (i == 8 && k == 9)
+                    else if ((i == 8 && k == 9))
                     {
                         Console.WriteLine($"{i}{k}");
                     }
