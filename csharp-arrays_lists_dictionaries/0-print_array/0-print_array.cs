@@ -22,7 +22,7 @@
                     newArray[i] = i;
                     Console.Write(newArray[i] + " ");
                 }
-                Console.WriteLine();
+                Console.WriteLine(" ");
                 return newArray;
             }
         }
