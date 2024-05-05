@@ -20,7 +20,7 @@
                 for (int i = 0; i < size; i++)
                 {
                     newArray[i] = i;
-                    Console.Write(newArray[i] + " ");
+                    Console.Write("{0}{1}", i, i != size - 1 ? " ": "");
                 }
                 Console.WriteLine();
                 return newArray;
