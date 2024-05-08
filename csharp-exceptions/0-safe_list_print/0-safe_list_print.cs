@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _0_safe_list_print
+class List
 {
-    class Program
+   public static int SafePrint(List<int> myList, int n)
     {
-        static void Main(string[] args)
+        int i = 0;
+        for (; i < n; i++)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Console.WriteLine(myList[i]);
+            }
+            catch
+            {
+                return i;
+            }
         }
+        return i;
     }
 }
