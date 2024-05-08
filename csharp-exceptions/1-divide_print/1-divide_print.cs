@@ -1,12 +1,21 @@
 ﻿using System;
 
-namespace _1_divide_print
+class Int
 {
-    class Program
+    public static void divide(int a, int b)
     {
-        static void Main(string[] args)
+        int result = 0;
+        try
         {
-            Console.WriteLine("Hello World!");
+            result = (a/b);
+        }
+        catch
+        {
+            Console.WriteLine("Cannot divide by zero");
+        }
+        finally
+        {
+            Console.WriteLine("{0} / {1} = {2}", a, b, result);
         }
     }
 }
