@@ -20,6 +20,7 @@ namespace Enemies
             {
                 throw new ArgumentException("Health must be greater than or equal to 0");
             }
+            health = value;
         }
     }
 }
