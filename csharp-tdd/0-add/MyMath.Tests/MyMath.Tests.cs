@@ -2,17 +2,35 @@ using NUnit.Framework;
 
 namespace MyMath.Tests
 {
-    public class Tests
+    [TestFixture]
+    public class OperationsTests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void positive()
         {
+            int sum = Operations.Add(3, 3);
+            Assert.AreEqual(sum, 6);
         }
 
         [Test]
-        public void Test1()
+        public void negative()
         {
-            Assert.Pass();
+            int sum = Operations.Add(3, -6);
+            Assert.AreEqual(sum, -3);
+        }
+
+        [Test]
+        public void doubleZero()
+        {
+            int sum = Operations.Add(0, 0);
+            Assert.AreEqual(sum, 0);
+        }
+
+        [Test]
+        public void singleZero()
+        {
+            int sum = Operations.Add(0, -6);
+            Assert.AreEqual(sum, -6);
         }
     }
 }
