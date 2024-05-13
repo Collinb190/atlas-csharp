@@ -1,4 +1,5 @@
 ﻿using System;
+using Text;
 
 namespace TextConsole
 {
@@ -6,7 +7,9 @@ namespace TextConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string phrase = "A man, a plan, a canal: Panama.";
+            bool result = Str.IsPalindrome(phrase);
+            Console.WriteLine(result);
         }
     }
 }

@@ -1,18 +1,31 @@
 using NUnit.Framework;
 
-namespace Tests
+namespace Text.Tests
 {
-    public class Tests
+    public class StrTests
     {
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void OneWordTrue()
         {
+            string s = "Racecar";
+            bool result = Str.IsPalindrome(s);
+            Assert.IsTrue(result);
         }
 
         [Test]
-        public void Test1()
+        public void OneWordFalse()
         {
-            Assert.Pass();
+            string s = "nope";
+            bool result = Str.IsPalindrome(s);
+            Assert.IsFalse(result);
+        }
+
+        [Test]
+        public void FullStringTrue()
+        {
+            string s = "A man, a plan, a canal: Panama.";
+            bool result = Str.IsPalindrome(s);
+            Assert.IsTrue(result);
         }
     }
 }
