@@ -5,6 +5,14 @@ namespace Text.Tests
     public class StrTests
     {
         [Test]
+        public void Empty()
+        {
+            string s = "";
+            bool result = Str.IsPalindrome(s);
+            Assert.IsTrue(result);
+        }
+
+        [Test]
         public void OneWordTrue()
         {
             string s = "Racecar";
