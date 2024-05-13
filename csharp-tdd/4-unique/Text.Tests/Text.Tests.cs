@@ -5,6 +5,22 @@ namespace Text.Tests
     public class StrTests
     {
         [Test]
+        public void First()
+        {
+            string s = "fabcdabcd";
+            int i = Str.UniqueChar(s);
+            Assert.AreEqual(i, 0);
+        }
+
+        [Test]
+        public void Last()
+        {
+            string s = "abcdabcdf";
+            int i = Str.UniqueChar(s);
+            Assert.AreEqual(i, 8);
+        }
+
+        [Test]
         public void Regular()
         {
             string s = "abcdfabcd";
