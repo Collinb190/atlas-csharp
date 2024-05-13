@@ -1,4 +1,5 @@
 ﻿using System;
+using Text;
 
 namespace TextConsole
 {
@@ -6,7 +7,9 @@ namespace TextConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string s = "abcdfabcd";
+            int i = Str.UniqueChar(s);
+            Console.WriteLine(i);
         }
     }
 }
