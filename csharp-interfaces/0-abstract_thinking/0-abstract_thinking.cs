@@ -1,12 +1,10 @@
 ﻿using System;
 
-namespace _0_abstract_thinking
+abstract class Base
 {
-    class Program
+    public string name  = null;
+    public override string ToString()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        return name + " is a " + this.GetType();
     }
 }
