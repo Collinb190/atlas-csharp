@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Collections;
 
+/// <summary>
+/// abstract class called Base
+/// </summary>
 abstract class Base
 {
     public string name  { get; set; }
