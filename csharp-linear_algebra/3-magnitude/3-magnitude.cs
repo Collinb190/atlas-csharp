@@ -1,6 +1,6 @@
 ﻿using System;
 
- public class VectorMath
+public class VectorMath
 {
     public static double Magnitude(double[] vector)
     {
@@ -20,4 +20,3 @@
         return Math.Round(result, 2);
     }
 }
-
