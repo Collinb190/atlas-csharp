@@ -4,12 +4,6 @@ namespace _3_magnitude
 {
     class VectorMath
     {
-        static void Main(string[] args)
-        {
-            double answer = Magnitude(new double[] {3.0, 4.0} );
-            Console.WriteLine(answer);
-        }
-
         public static double Magnitude(double[] vector)
         {
             double result = 0;
