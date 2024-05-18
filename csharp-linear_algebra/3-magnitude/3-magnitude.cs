@@ -19,7 +19,7 @@ namespace _3_magnitude
             }
             
             result = Math.Sqrt(squaredResult);
-            return result;
+            return Math.Round(result, 2);
         }
     }
 }
