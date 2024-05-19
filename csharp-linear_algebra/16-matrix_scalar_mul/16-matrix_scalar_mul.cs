@@ -12,6 +12,8 @@ class MatrixMath
 
         if (row1 != 2 && row1 != 3)
             return fail;
+        if (col1 > 3)
+            return fail;
         for (int i = 0; i < row1; i++)
             for (int j = 0; j < col1; j++)
             {
