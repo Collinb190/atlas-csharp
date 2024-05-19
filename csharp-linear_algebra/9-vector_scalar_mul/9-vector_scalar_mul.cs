@@ -2,14 +2,17 @@
 
 class VectorMath
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World!");
-    }
-
     public static double[] Multiply(double[] vector, double scalar)
     {
-        
+        double[] vectorProduct = new double[vector.Length];
+        double[] vectorProductFail = new double[1] { -1 };
+
+        if (vector.Length != 2 && vector.Length !=3)
+            return vectorProductFail;
+        for (int i = 0; i < vector.Length; i++)
+        {
+            vectorProduct[i] = vector[i] * scalar;
+        }
+        return vectorProduct;
     }
 }
-
