@@ -4,7 +4,7 @@ class VectorMath
 {
    public static double DotProduct(double[] vector1, double[] vector2)
     {
-        double vectorDotProduct = 0;
+        double vectorDotProduct = 0.0;
         double[] vectorDotProductFail = new double[1] { -1 };
 
         if (vector1.Length != vector2.Length) 
