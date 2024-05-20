@@ -20,7 +20,7 @@ class Queue<T>
     /// </summary>
     public class Node
     {
-        private T value = null;
+        private T value = default(T);
         public Node next = null;
 
         public Node(T param)
@@ -40,8 +40,8 @@ class Queue<T>
         }
         else
         {
-            tail.next = temp;
-            tail = temp;
+            tail.next = vari;
+            tail = vari;
         }
         count ++;
     }
