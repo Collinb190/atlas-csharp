@@ -10,7 +10,7 @@ class MatrixMath
         
         // Define the 2D rotation matrix
         double[,] rotationMatrix = {
-            { Math.Cos(angle), -Math.Sin(angle) },
+            { Math.Cos(angle), -1 * Math.Sin(angle) },
             { Math.Sin(angle), Math.Cos(angle) }
         };
         
