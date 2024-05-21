@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryLibrary", "InventoryLibrary\InventoryLibrary.csproj", "{3BE97A77-95E1-4B4A-B58E-38152DDB54C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManager", "InventoryManager\InventoryManager.csproj", "{A7F848AF-D877-40E2-ACA0-E895477F5712}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{3BE97A77-95E1-4B4A-B58E-38152DDB54C9}.Release|x64.Build.0 = Release|Any CPU
 		{3BE97A77-95E1-4B4A-B58E-38152DDB54C9}.Release|x86.ActiveCfg = Release|Any CPU
 		{3BE97A77-95E1-4B4A-B58E-38152DDB54C9}.Release|x86.Build.0 = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|x64.Build.0 = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Debug|x86.Build.0 = Debug|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|x64.ActiveCfg = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|x64.Build.0 = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7F848AF-D877-40E2-ACA0-E895477F5712}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
