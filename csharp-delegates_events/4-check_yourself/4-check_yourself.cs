@@ -32,6 +32,7 @@ class Player
         }
         this.hp = this.maxHp;
         this.status = $"{this.name} is ready to go!";
+        HPCheck += CheckStatus;
     }
 
     /// <summary>
@@ -65,6 +66,7 @@ class Player
         if (newHP < 0f) this.hp = 0f;
         else if (newHP > this.maxHp) this.hp = this.maxHp;
         else this.hp = newHP;
+        HPCheck(this, new CurrentHPArgs(this.hp));
     }
 
     public float ApplyModifier(float baseValue, Modifier modifier)
@@ -75,6 +77,16 @@ class Player
     }
 
     public event EventHandler<CurrentHPArgs> HPCheck;
+
+    private void CheckStatus(object sender, CurrentHPArgs e)
+    {
+        if (e.currentHP == this.maxHp) this.status = $"{this.name} is in perfect health!";
+        else if (e.currentHP >= (this.maxHp * 0.5f) && e.currentHP < this.maxHp) this.status = $"{this.name} is doing well!";
+        else if (e.currentHP >= (this.maxHp * .25f) && e.currentHP < (this.maxHp * 0.5f)) this.status = $"{this.name} isn't doing too great...";
+        else if (e.currentHP > 0f && e.currentHP < (this.maxHp * 0.5f)) this.status = $"{this.name} needs help!";
+        else this.status = $"{this.name} is knocked out!";
+        Console.WriteLine(this.status);
+    }
 }
 
 class CurrentHPArgs : EventArgs
