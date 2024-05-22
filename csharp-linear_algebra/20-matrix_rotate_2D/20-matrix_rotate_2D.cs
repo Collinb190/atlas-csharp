@@ -5,22 +5,20 @@ class MatrixMath
     public static double[,] Rotate2D(double[,] matrix, double angle)
     {
         // Check if the input matrix has more than two columns
-        if (matrix.GetLength(1) > 2)
+        if (matrix.GetLength(1) != 2)
             return new double[,] { { -1 } };
         
-        // Define the 2D rotation matrix
-        double[,] rotationMatrix = {
-            { Math.Cos(angle), -1 * Math.Sin(angle) },
-            { Math.Sin(angle), Math.Cos(angle) }
-        };
-        
-        double[,] transformedPoint = new double[2, 2];
+        double cos = Math.Cos(angle);
+        double sin = Math.Sin(angle);
 
-        // Perform matrix multiplication to rotate each point
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                for (int k = 0; k < 2; k++)
-                    transformedPoint[i, j] += Math.Round(matrix[i, k] * rotationMatrix[k, j], 2);
-        return transformedPoint;
+        double[,] result = new double[matrix.GetLength(0), 2];
+
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            result[i, 0] = Math.Round(matrix[i, 0] * cos - matrix[i, 1] * sin, 2);
+            result[i, 1] = Math.Round(matrix[i, 0] * sin + matrix[i, 1] * cos, 2);
+        }
+
+        return result;
     }
 }
