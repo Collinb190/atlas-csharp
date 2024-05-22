@@ -7,7 +7,9 @@ class MatrixMath
         // Check if the input matrix has more than two columns
         if (matrix.GetLength(1) != 2)
             return new double[,] { { -1 } };
-        
+
+        // X' = xcos(θ) − ysin(θ)
+        // Y' = xsin(θ) + ycos(θ)
         double cos = Math.Cos(angle);
         double sin = Math.Sin(angle);
 
