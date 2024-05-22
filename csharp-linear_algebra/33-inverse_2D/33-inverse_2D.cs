@@ -17,8 +17,8 @@ class MatrixMath
 
         double[,] inverse = new double[,]
         {
-            { d / det, -b / det },
-            { -c / det, a / det }
+            { Math.Round(d / det, 2), Math.Round(-b / det, 2) },
+            { Math.Round(-c / det, 2), Math.Round(a / det, 2) }
         };
 
         return inverse;
