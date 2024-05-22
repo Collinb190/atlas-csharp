@@ -4,29 +4,48 @@ using InventoryLibrary;
 namespace InventoryManager
 {
     class Program
-    {
-        static void Main(string[] args)
+    {        static void Main(string[] args)
         {
-            // Create an instance of BaseClass
-            BaseClass item1 = new BaseClass();
+            // Test creating an Item with a valid name
+            try
+            {
+                Item validItem = new Item("Valid Item");
+                Console.WriteLine("Created an item with a valid name:");
+                Console.WriteLine($"ID: {validItem.id}");
+                Console.WriteLine($"Name: {validItem.name}");
+                Console.WriteLine($"Date Created: {validItem.date_created}");
+                Console.WriteLine($"Date Updated: {validItem.date_updated}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
 
-            // Display initial values
-            Console.WriteLine("Initial values:");
-            Console.WriteLine($"ID: {item1.id}");
-            Console.WriteLine($"Date Created: {item1.date_created}");
-            Console.WriteLine($"Date Updated: {item1.date_updated}");
+            Console.WriteLine();
 
-            // Wait for a few seconds to show the difference in time
-            System.Threading.Thread.Sleep(2000); // 2-second delay
+            // Test creating an Item with an invalid (empty) name
+            try
+            {
+                Item invalidItem = new Item(""); // This should throw an exception
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Exception caught while creating an item with an empty name:");
+                Console.WriteLine(ex.Message);
+            }
 
-            // Update the date_updated property using the method
-            item1.UpdateDate();
+            Console.WriteLine();
 
-            // Display updated values
-            Console.WriteLine("\nUpdated values:");
-            Console.WriteLine($"ID: {item1.id}");
-            Console.WriteLine($"Date Created: {item1.date_created}");
-            Console.WriteLine($"Date Updated: {item1.date_updated}");
+            // Test creating an Item with a null name
+            try
+            {
+                Item nullNameItem = new Item(null); // This should throw an exception
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Exception caught while creating an item with a null name:");
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
