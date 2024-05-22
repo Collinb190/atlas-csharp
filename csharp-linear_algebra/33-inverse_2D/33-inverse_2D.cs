@@ -7,8 +7,8 @@ class MatrixMath
         if (matrix.GetLength(0) != 2 || matrix.GetLength(1) !=2)
             return new double[,] { {-1} };
 
-        double checkIfSingular = Determinant(matrix);
-        if (checkIfSingular == 0) return new double[,] { {-1} };
+        double det = Determinant(matrix);
+        if (det == 0) return new double[,] { {-1} };
 
         double a = matrix[0, 0];
         double b = matrix[0, 1];
