@@ -1,25 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using InventoryLibrary;
+using System.IO;
 
 namespace InventoryManager
 {
     class Program
-    {        
+    {
         static void Main(string[] args)
         {
-            // Test creating an Inventory with valid parameters
+            // Create an instance of JSONStorage
+            JSONStorage storage = new JSONStorage();
+
+            // Test adding a User to the storage
             try
             {
-                Inventory validInventory = new Inventory("user123", "item456", 5);
-                Console.WriteLine("Created an Inventory with valid parameters:");
-                Console.WriteLine($"ID: {validInventory.id}");
-                Console.WriteLine($"User ID: {validInventory.user_id}");
-                Console.WriteLine($"Item ID: {validInventory.item_id}");
-                Console.WriteLine($"Quantity: {validInventory.Quantity}");
-                validInventory.Quantity = 10;
-                Console.WriteLine($"Quantity: {validInventory.Quantity}");
-                Console.WriteLine($"Date Created: {validInventory.date_created}");
-                Console.WriteLine($"Date Updated: {validInventory.date_updated}");
+                User user = new User("Test User");
+                storage.New(user);
+                Console.WriteLine("Added User to storage:");
+                Console.WriteLine($"ID: {user.id}");
+                Console.WriteLine($"Name: {user.name}");
+                Console.WriteLine($"Date Created: {user.date_created}");
+                Console.WriteLine($"Date Updated: {user.date_updated}");
             }
             catch (Exception ex)
             {
@@ -28,41 +30,71 @@ namespace InventoryManager
 
             Console.WriteLine();
 
-            // Test creating an Inventory with an invalid (empty) user ID
+            // Test adding an Item to the storage
             try
             {
-                Inventory invalidInventory = new Inventory("", "item789", 3); // This should throw an exception
+                Item item = new Item("Test Item");
+                storage.New(item);
+                Console.WriteLine("Added Item to storage:");
+                Console.WriteLine($"ID: {item.id}");
+                Console.WriteLine($"Name: {item.name}");
+                Console.WriteLine($"Date Created: {item.date_created}");
+                Console.WriteLine($"Date Updated: {item.date_updated}");
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("Exception caught while creating an Inventory with an empty user ID:");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Exception: {ex.Message}");
             }
 
             Console.WriteLine();
 
-            // Test creating an Inventory with an invalid (empty) item ID
+            // Test adding an Inventory to the storage
             try
             {
-                Inventory invalidInventory = new Inventory("user123", "", 3); // This should throw an exception
+                Inventory inventory = new Inventory("User1", "Item1", 5);
+                storage.New(inventory);
+                Console.WriteLine("Added Inventory to storage:");
+                Console.WriteLine($"User ID: {inventory.user_id}");
+                Console.WriteLine($"Item ID: {inventory.item_id}");
+                Console.WriteLine($"Quantity: {inventory.Quantity}");
+                Console.WriteLine($"Date Created: {inventory.date_created}");
+                Console.WriteLine($"Date Updated: {inventory.date_updated}");
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("Exception caught while creating an Inventory with an empty item ID:");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Exception: {ex.Message}");
             }
 
             Console.WriteLine();
 
-            // Test creating an Inventory with a negative quantity
+            // Test saving to JSON file
             try
             {
-                Inventory invalidInventory = new Inventory("user123", "item789", -1); // This should throw an exception
+                storage.Save();
+                Console.WriteLine("Data saved to JSON file.");
             }
-            catch (ArgumentOutOfRangeException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine("Exception caught while creating an Inventory with a negative quantity:");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Exception during save: {ex.Message}");
+            }
+
+            Console.WriteLine();
+
+            // Test loading from JSON file
+            try
+            {
+                JSONStorage newStorage = new JSONStorage();
+                newStorage.Load();
+                Console.WriteLine("Data loaded from JSON file:");
+
+                foreach (var obj in newStorage.All())
+                {
+                    Console.WriteLine($"Key: {obj.Key}, Object: {obj.Value}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during load: {ex.Message}");
             }
         }
     }
